@@ -20,24 +20,25 @@
 
 ## items テーブル
 
-|  Column               |  Type        |  Options                         |
-|  -------------------  |  ----------  |  ------------------------------  |
-|  product_name         |  string      |  null: false                     |
-|  product_description  |  text        |  null: false                     |
-|  payment_amount       |  integer     |  null: false                     |
-|  postage              |  integer     |  null: false                     |
-|  category             |  integer     |  null: false                     |
-|  status               |  integer     |  null: false                     |
-|  shipping_charges     |  integer     |  null: false                     |
-|  destination_area     |  integer     |  null: false                     |
-|  days_until_shipping  |  integer     |  null: false                     |
-|  selling_price        |  integer     |  null: false                     |
-|  user                 |  references  |  null: false, foreign_key: true  |
+|  Column                  |  Type        |  Options                         |
+|  ----------------------  |  ----------  |  ------------------------------  |
+|  product_name            |  string      |  null: false                     |
+|  product_description     |  text        |  null: false                     |
+|  payment_amount          |  integer     |  null: false                     |
+|  postage                 |  integer     |  null: false                     |
+|  category_id             |  integer     |  null: false                     |
+|  status_id               |  integer     |  null: false                     |
+|  shipping_charges_id     |  integer     |  null: false                     |
+|  destination_area_id     |  integer     |  null: false                     |
+|  days_until_shipping_id  |  integer     |  null: false                     |
+|  selling_price           |  integer     |  null: false                     |
+|  user                    |  references  |  null: false, foreign_key: true  |
 
 ### Association
 
 - belongs_to :user
 - has_one :order
+- :item
 
 ## orders テーブル
 
@@ -54,15 +55,15 @@
 
 ## addresses テーブル
 
-|  Column         |  Type        |  Options                         |
-|  -------------  |  ----------  |  ------------------------------  |
-|  postal_code    |  string      |  null: false                     |
-|  prefectures    |  integer     |  null: false                     |
-|  city           |  string      |  null: false                     |
-|  address        |  string      |  null: false                     |
-|  building_name  |  string      |                                  |
-|  phone_number   |  string      |  null: false                     |
-|  order          |  references  |  null: false, foreign_key: true  |
+|  Column          |  Type        |  Options                         |
+|  --------------  |  ----------  |  ------------------------------  |
+|  postal_code     |  string      |  null: false                     |
+|  prefectures_id  |  integer     |  null: false                     |
+|  city            |  string      |  null: false                     |
+|  address         |  string      |  null: false                     |
+|  building_name   |  string      |                                  |
+|  phone_number    |  string      |  null: false                     |
+|  order           |  references  |  null: false, foreign_key: true  |
 
 ### Association
 
