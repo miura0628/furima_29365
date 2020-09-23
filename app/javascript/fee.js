@@ -1,3 +1,4 @@
+
 function fee(){
 
   const itemPrice = document.getElementById("item-price")
