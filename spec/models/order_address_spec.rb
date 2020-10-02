@@ -62,7 +62,7 @@ RSpec.describe OrderAddress, type: :model do
           expect(@order_address.errors.full_messages).to include("Postal code Input correctly")
         end
         it 'prefectureが---で存在する場合は購入出来ない' do
-          @order_address.prefecture_id = "1"
+          @order_address.prefecture_id = 1
           @order_address.valid?
           expect(@order_address.errors.full_messages).to include("Prefecture Select")
         end
