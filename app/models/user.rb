@@ -4,7 +4,7 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
   has_many :items
-  has_one :order
+  has_many :orders
 
   with_options presence: true do
     validates :birth_date
